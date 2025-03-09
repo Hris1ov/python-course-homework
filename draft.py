@@ -526,29 +526,150 @@ import sys
 #         total += num # total = total + num
 # print(f"the sum is: {total}")
 
-# Задачи с while цикъл:
+#--------------------------- Copy by reference/value ---------------------------------
 
-# 6️⃣ Сумиране на нечетни числа до 100:
+# Copy by Reference	
 
-# total = 0
-# while x <= 100:
-#     print(x, end=", ")
-#     x
+# При mutable типове (list, dict, set), когато направим присвояване (b = a), двете променливи сочат към същия обект в паметта, затова копие по референция.
+# Python прави това, за да пести памет. Промените в едната променлива засягат и другата.
 
-# Напиши програма, която използва while цикъл, за да намери сумата на всички нечетни числ1а от  до 100.
-# 7️⃣ Отгатване на число:
+# Copy by Value
 
-# Напиши програма, която избира случайно число от 1 до 10 (без random модул – може просто да зададеш число).
-# Позволи на потребителя да въвежда предположения, докато не познае правилното число.
-# 8️⃣ Обратен брояч:
+# При immutable типове (int, bool, float, str, tuple), ако променим стойността, референцията се пренасочва към нов обект, затова е копие по стойност
+# Старата стойност остава без референция и Garbage Collector (GC) може да я изтрие.
 
-# Използвай while цикъл, за да отпечаташ обратно броене от 10 до 1, след което да отпечаташ "Старт!".
+# Пример за immutable:
+# a = 10
+# b = 15
+# print(id(a))  # ID на а (10)
+# print(id(b))  # ID на b (15)
+
+# b = 10  # Пренасочваме b към нов обект (10)
+# print(id(b))  # ID на b вече е като на a
+
+# # При mutable обекти, ако искаме да направим копие, което да НЕ засяга оригинала, използваме shallow copy (копиране на първото ниво) чрез метода copy().
+
+# # Пример за shallow copy:
+# a = [10]
+# b = [15]
+# b1 = b.copy()  # Създаваме нов списък с идентични стойности
+
+# print(id(b))   # ID на оригиналния списък
+# print(id(b1))  # ID на копието (различен от b)
+
+# b1.append(6)  # Добавяме елемент към копието
+# print(b)   # Оригиналът остава непроменен [15]
+# print(b1)  # Копието е променено [15, 6]
+
+
+
 
 #--------------------------- Membership test: in/not in ---------------------------------
 
 
 #--------------------------- Dictionaries ---------------------------------
 
-mytuple = (1,'banana','dog')
-print(mytuple[0])
+# Напиши програма, която създава речник със следните двойки ключ-стойност:
 
+# "name": "Ivan"
+# "age": 25
+# "city": "Sofia"
+
+# След това отпечатай името и възрастта.
+
+# info = {
+# "name": "Ivan",
+# "age": 25,
+# "city": "Sofia"
+# }
+
+# print(f"He is {info['name']} and he is {info['age']} yo.")
+
+
+# fruits = {
+#     'banana': 6.50,
+#     'melon': 3.10,
+#     'plums': 3.10
+# }
+
+# print(fruits['plum'])
+# print(id(fruits['melon']))
+# print(id(fruits['plums']))
+# fruits['plum'] = 3.50
+# print(id(fruits['plums ']))
+
+# keys = fruits.keys()
+# print(keys)
+
+# val = fruits.values()
+# print(val)
+
+# Добавяне и премахване на елементи
+# Задача:
+# Създай речник със следните двойки:
+
+# person = {"name": "Maria", "age": 30, "job": "engineer"}
+# Добави нов ключ "salary" със стойност 3500.
+# Изтрий ключа "job".
+# Отпечатай обновения речник.
+
+# person = {
+#     "name": "Maria", 
+#     "age": 30, 
+#     "job": "engineer"}
+
+# person['salary'] = 3500
+# # print(person)
+
+# del person['job']
+# print(person)
+
+# prices = {
+#     "apple": 2.50, "banana": 1.80, "orange": 2.20, "grape": 3.00
+#     }
+
+# for fruit, price in prices.items():
+#     print(f"The price of {fruit} is:  {price}")
+
+# print(prices.keys())
+# print(prices.values())
+# print(prices.items())
+# print(prices)
+
+# Създай речник с информация за автомобил (марка, модел, година).
+# Изведи стойността за ключа "марка".
+
+# cars = {
+#     'manufacturer': 'Ford',
+#     'model': 'T',
+#     'year': 1892
+
+# }
+
+# print(cars.values())
+
+# cars_new = {
+#     'manufacturer': 'Ford',
+#     'model': 'F150',
+#     'year': 1995
+
+# }
+
+# cars_summary = [cars, cars_new]
+# print(cars_summary.sorted())
+
+# cars_new = {
+#     'manufacturer': 'Ford',
+#     'model': 'F150',
+#     'year': 1995
+# }
+
+# del cars_new['model']
+# print(cars_new.items())
+
+# words = ["ябълка", "банан", "портокал", "грозде"]
+# word = words[::-1]
+
+# for fr in word:
+#     print(fr, end=",")
+    
