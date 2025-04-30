@@ -29,13 +29,13 @@ print(f"Hello, my name is {name}, I am {age} years old and my favorite color is 
 #  Create two numeric variables representing the year Alice was born and the current year.
 #  Calculate Alice's age using these variables and an f-string, then print the result.
 
-### Given:
-birth_year = 1993
-current_year = 2023
+# ### Given:
+# birth_year = 1993
+# current_year = 2023
 
-age = current_year - birth_year
+# age = current_year - birth_year
 
-print(f"Alice, your age is {age}")
+# print(f"Alice, your age is {age}")
 
 
 ### Expected output
@@ -47,9 +47,9 @@ print(f"Alice, your age is {age}")
 #  Example: "$1,234,567.89". Use an f-string to format and print the result.
 
 ### Given:
-amount = 1234567.89
+# amount = 1234567.89
 
-print(f"${amount:,.2f}")
+# print(f"${amount:,.2f}")
 
 ### Expected output
 #$1,234,567.89

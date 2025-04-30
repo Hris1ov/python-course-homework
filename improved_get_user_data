@@ -1,0 +1,7 @@
+Improve the function get_user_data() defined in Task1, adding a check for valid user data:
+User name must be at least 2 characters long
+User's height must be in the range: [50 - 250]
+User's weight must be in the range: [5 - 300]
+If the user enters wrong data, ask for input again.
+Advanced task: define a separate function for each check (validate_name(), validate_height(), validate_weight()) which will return True if the user input is valid, and False - otherwise.
+

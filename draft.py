@@ -673,3 +673,550 @@ import sys
 # for fr in word:
 #     print(fr, end=",")
     
+
+
+#--------------------------- List comprehensions ---------------------------------
+
+# new_list = [expression for item in iterable if condition]
+
+# expression – какво ще бъде добавено в new_list
+# item – текущият елемент от iterable (например списък, диапазон, низ и др.)
+# iterable – последователност от елементи, през които преминаваме
+# condition (по желание) – филтър, който определя дали даден елемент ще бъде включен в new_list
+
+# Напиши програма, която създава списък с квадратите на числата от 1 до 20 с помощта на list comprehension.
+
+# squares = [number**2 for number in range(1,21)]
+# print(squares)
+
+# Очакван резултат:
+
+# [1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121, 144, 169, 196, 225, 256, 289, 324, 361]
+
+# Филтриране на нечетните числа
+# Създай списък, който съдържа само нечетните числа от 1 до 20.
+
+# odds = [num for num in range(1,21) if num%2!=0]
+# print(odds)
+
+# Напиши програма, която взема списък от думи и връща списък с дължините им.
+
+# words = ["python", "code", "list", "comprehension", "exercise"]
+
+# word_len = [len(words) for words in words]
+# print(word_len)
+
+#--------------------------- Functions ---------------------------------
+
+# def increment(number, by=1, ):
+#     return number + by
+
+# print(increment(2+0))
+
+# def hello_func(greet):
+#     return '{} function'.format(greet)
+
+# print(hello_func('Hi'))
+
+# def greet(name):
+# #    input(f"Please enter a name: ")
+#     print(f"Hello, {name}!")
+
+# greet('Alice')
+
+# def plus(a,b):
+#     return a + b
+
+# print(plus(2,3))
+
+# def plus(a,b):
+#     return a + b
+
+# print(plus(2,3))
+
+# def aver(*numbers):
+#     return sum(numbers) / len(numbers)
+
+# print(f"{aver(1,2,3,4,5):.2f}")
+
+# def greet(name="Please enter your name"):
+#     print(f"Hello, {name}!")
+
+# greet()
+
+# def add(a, b):
+#     return a + b
+
+# print(add(3, 5))
+
+# def is_even(n):
+#     return n % 2 == 0
+
+# print(is_even(int(input("Enter a number: "))))
+
+# def reverse_string(string):
+#     return string[::-1]
+
+# input = (str(input("Enter a string: ")))
+# print(reverse_string(input))
+
+# def max_number(*numbers):
+#     return max(numbers)
+
+# print(max_number(1,2,3,4,5))
+
+# def system(**kwargs):
+#     print("System Information:"
+#     "\n")
+#     for key, value in kwargs.items():
+#         print(f"{key}: {value}")
+
+# system(Software='MacOS', Version='18.01', Memory='48GB', Storage='2TB')
+
+# def individual(version, name = 'wifi'):
+#     print(f"This is a special {name} version {version}.")
+
+# individual("handsfree")
+
+# def foo(*fruits):
+#     print(fruits)
+
+# foo('apple', 'banana', 'cherry')
+
+# Define the calculate_sum() function, which will print the sum of variable number of numerical arguments
+#  # calculate_sum() definition
+
+# # test your code:
+# calculate_sum(1)
+# #should print 1
+
+# calculate_sum(1,2)
+# #should print 3
+
+# calculate_sum(1,2,3)
+# #should print 6
+
+# def calculate_sum():
+#     return sum(range(1,6))
+
+# print(calculate_sum())
+
+# def menu_print(fruit, price):
+#     print(f"{fruit:.<20s}{price:.2f}")
+
+# menu_print("apple", 2.50)
+
+# def outer():
+#     x = 2
+
+#     def inner():
+#         x = 3
+#         print(f"x = {x} in inner")
+
+#     inner()
+#     print(f"x = {x} in outer")
+
+# x = 1
+# outer()
+# print(f"x = {x} in global")
+
+#--------------------------- Lambda ---------------------------------
+
+#--------------------------- Map ---------------------------------
+
+#--------------------------- OOP ---------------------------------
+
+# class Person:
+#    def __init__(self, name, age):
+#        self.name = name
+#        self.age = age
+
+#    def greet(self):
+#        print(f"Hello, my name is {self.name} and I am {self.age} years old.")
+
+# p1 = Person("Alice", 25)
+# p1.greet()
+
+# class Car:
+#     def __init__(self,brand: str,speed: int):
+#         self.brand = brand
+#         self.speed = speed
+
+#     def accelarate(self,amount):
+#         self.speed += amount
+
+# car = Car("BMW",200)
+# car.accelarate(20)
+# print(car.speed)
+
+# Направи клас Animal с метод make_sound(), който връща "Some sound".
+# Създай клас Dog, който наследява Animal, но методът make_sound() връща "Woof!".
+
+# class Animal:
+#     def __init__(self,animal):
+#         self.animal = animal
+    
+#     def make_sound(self):
+#         return f"There is no sound for {self.animal}"
+    
+# class Dog(Animal):
+#     def make_sound(self):
+#         print( "Woof")
+
+# class Cat(Animal):
+#     def sleep(self):
+#         pass
+
+# # dog = Dog("Dog")
+# cat = Cat("Cat")
+
+# print(cat.make_sound())
+
+# class Shape:
+#     def __init__(self, color, is_filled):
+#         self.color = color
+#         self.is_filled = is_filled
+
+# class Triangle(Shape):
+#     def __init__(self, color, is_filled, height):
+#         super().__init__(color, is_filled)
+#         self.height = height
+
+# class Square(Shape):
+#     def __init__(self, color, is_filled, side):
+#         super().__init__(color, is_filled)
+#         self.side = side
+
+# class Circle(Shape):
+#     def __init__(self, color, is_filled, radius):
+#         super().__init__(color, is_filled)
+#         self.radius = radius
+
+# tr = Triangle("red", True, 5)
+# sq = Square("blue", False, 4)
+# cr = Circle("green", True, 3)
+
+# print(f"Triangle color: {tr.color}, height: {tr.height}")
+# print(f"Square color: {sq.color}, side: {sq.side}")
+# print(f"Circle color: {cr.color}, radius: {cr.radius}")
+
+# class Car:
+#     total = 0
+
+#     def __init__(self, manufacturer):
+#         self.manufacturer = manufacturer
+#         Car.total += 1
+
+#     @classmethod
+#     def create_car(cls, manufacturer):
+#         return cls(manufacturer)
+    
+# car1 = Car.create_car("Lian")
+# car2 = Car.create_car("BYD")
+
+# print(Car.total)
+
+###
+
+# class Person:
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+
+#     def __str__(self):
+#         return f"Hello my name is {name} and I am {age} years old"
+    
+#     person1 = ("Scrolina", 26)
+#     person2 = ("Spirolina", 21)
+
+#     print(person1)
+
+###
+
+# class Book:
+#     def __init__(self, tittle, author, year):
+#         self.tittle = tittle 
+#         self.author = author
+#         self.year = year
+
+#     def display_info(self):
+#        return f"Book is {self.tittle}, written by {self.author} from {self.year} year."
+    
+# book1 = Book("Huba-Buba", "Hans-Christian Andersen", 1874)
+# book2 = Book("Only I don't know Python", "me", 2025)
+
+# print(book1.display_info())
+
+###
+
+# class Vehicle:
+#     def move(self):
+#         return f"This shit is mf movingf"
+
+# class Car(Vehicle):
+#     def move(self):
+#         return f"This $h#t is moving."
+
+# class Bike(Vehicle):
+#     def move(self):
+#         return f"This thing is flying my head."
+
+# car = Car()
+# print(car.move())
+# bike = Bike()
+# print(bike.move())
+
+###
+
+# class Animal:
+#     def __init__(self):
+#         pass
+    
+#     def make_sound(self):
+#         pass
+
+# class Dog:
+#     def make_sound(self):
+#         return f"This fluffy is woofing at me."
+    
+# class Cat:
+#     def make_sound(seld):
+#         return f"The little cat is meowing all day around the house."
+
+# dog = Dog()
+# print(dog.make_sound())   
+# cat = Cat()
+# print(cat.make_sound())
+
+###
+
+# class Account:
+#     def __init__(self, owner, balance):
+#         self.owner = owner
+#         self.__balance = balance
+    
+#     def deposit(self, amount):
+#         self.__balance += amount
+#         return f"You are not rich but you now have {self.__balance}."
+
+#     def withdraw(self, amount):
+#         if amount > self.__balance:
+#             return f"Sorry brokie"
+#         else:
+#             self.__balance -= amount
+#             return f"You still have {self.__balance}."
+        
+#     def get_balance(self):
+#         return self.__balance
+
+# account1 = Account("John Doe", 1000)
+# # account1.deposit(500)
+# # account1.withdraw(3000)
+# print(account1.deposit(200))
+        
+###
+
+# class MathUtils:
+
+#     @staticmethod
+#     def multiply(a, b):
+#         return a * b
+
+# print(MathUtils.multiply(6, 3))
+
+# ###
+
+# class Person:
+#     def __init__(self, population)
+#         self.population = population
+
+#     @classmethod
+#     def get_population(cls):
+#         return cls.population
+    
+###
+
+# class Shapes:
+
+#     def __init__(self):
+#         pass
+
+#     def rectangle(self, height, width):
+#         self._height = height
+#         self._width = width
+
+#     @property
+#     def height(self):
+#         return f"Height is {self._height:.2f} cm"
+    
+#     @property
+#     def width(self):
+#         return f"Width is {self._width:.2f}cm"
+    
+# rect = Shapes()
+# rect.rectangle(3.6, 5.2)
+# print(rect.height)
+# print(rect.width)
+
+#---------------------------- Iterators ---------------------------------
+
+# names = [
+    
+#     "Ivan", "Maria", "Gosho"
+    
+#     ]
+
+# class NameIterator:
+#     def __init__(self, names):
+#         self.names = names
+#         self.index = 0
+
+# def __iter__(self):
+#     return self
+
+# def __next__(self):
+#     for name in names:
+#         name += 1
+#         return name
+#     raise StopIteration
+
+# names = iter(names)
+# print(next(names))
+# print(next(names))
+# print(next(names))
+
+# echo = str("Hello, world!")
+# iterator = iter(echo)
+# print(next(iterator))  # H
+# print(next(iterator))  # e
+# print(next(iterator))  # l
+# print(next(iterator))  # l
+# print(next(iterator))  # o
+# print(next(iterator))  # ,
+# print(next(iterator))  #
+# print(next(iterator))  #
+# print(next(iterator))  # w
+# print(next(iterator))  # o
+# print(next(iterator))  # r
+# print(next(iterator))  # l
+# print(next(iterator))  # d
+
+# class Evens:
+#     def __init__(self, number):
+#         self.number = number
+#         self.index = 0
+
+#     def __iter__(self):
+#         return self
+
+#     def __next__(self):
+#         while self.index < len(self.number):
+#             result = self.number[self.index]
+#             self.index += 1
+#             if result % 2 == 0:
+#                 return result
+#         else:
+#             raise StopIteration
+        
+# numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# evens = Evens(numbers)
+# for n in evens:
+#     print(n)
+
+# class RepeatWord:
+#     def __init__(self, word, times):
+#         self.word = word
+#         self.times = times
+#         self.count = 0
+
+#     def __iter__(self):
+#         return self
+    
+#     def __next__(self):
+#         if self.count < self.times:
+#             self.count += 1
+#             return self.word
+#         else:
+#             raise StopIteration
+
+# Задача 1: Основен итератор с iter() и next()
+
+# Задача:
+# Имаш списък: numbers = [10, 20, 30].
+
+# Създай итератор.
+# Използвай next() три пъти, за да отпечаташ елементите.
+
+
+# class ThreeIterator:
+#     def __iter__(self):
+#         return self
+    
+#     def __next__(self)
+
+
+
+# import os
+
+# file_path = "tmp.py"
+
+# if os.path.exists(file_path):
+#     print(f"{file_path} exists")
+# else:
+#     print(f"{file_path} does not exist")
+
+# class NumberIterator:
+#     def __init__(self, num):
+#         self.num = num
+#         self.current = 1
+
+#     def __iter__(self):
+#         return self
+    
+#     def __next__(self):
+#         if self.current > self.num:
+#             raise StopIteration
+#         value = self.current
+#         self.current += 1
+#         return value
+    
+# num_iterator = NumberIterator(6)
+
+# for value in num_iterator:
+#     print(value)
+
+# class UpIterator:
+#     def __init__(self, word):
+#         self.word = word
+#         self.current = 0
+
+#     def __iter__(self):
+#         return self
+    
+#     def __next__(self):
+#         while self.current < len(self.word):
+#             character = self.word[self.current]
+#             self.current += 1
+#             if character.isupper():
+#                 return character
+#         raise StopIteration
+        
+# for char in UpIterator("HeLlo PythOn"):
+#     print(char)
+
+class LettersIterator:
+    def __init__(self):
+        start = 97
+        stop = 100
+        current = start +=1
+
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        if current < stop:
+            return current
+            raise StopIteration
+        
+chars = LettersIterator()
+print(chars)
