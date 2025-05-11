@@ -22,13 +22,15 @@
 # user_surname = 'Byron'
 # signature = 'Best regards,'
 
-# #'Hello, Adam Byron!'
-# print( f'''Hello,\n{user_name} {user_surname}|\n\n
-# \t{signature}''')
+# 'Hello, Adam Byron!'
+# print( f'''
+# Hello,\n\n{user_name} {user_surname}\n\n{signature}
+# '''
+# )
 
 # x = 123
 # print(f"-->{x:>10}<--")
-# print(f"-{x:<30.2f}-")
+# print(f"-{x:<30.2f}")
 
 # Въведете вашето име: Иван
 # Въведете вашата възраст: 30
@@ -93,13 +95,15 @@
 
 # print('Shakespeare always told his friends about \"his great brown horse\"')
 
-# print('''This is a random text with \"quotes\" in some places.\n
+# print('''
+# This is a random text with \"quotes\" in some places.\n
 #     For example, here is a sentence with a \"quote\" in the middle.\n\t
 #     Let's also add a new tab here for indentation.\n
 # This line contains a \"quote\" and we want to add a new line.\n
 # Here comes another quote: \"Be yourself; everyone else is already taken.\"\n
 # Finally, let's end with a new line and a tab:\n	
-# 	\t\"End of example.\"''')
+# 	\t\"End of example.\"
+# ''')
 
 
 
@@ -820,6 +824,47 @@ import sys
 # outer()
 # print(f"x = {x} in global")
 
+#--------------------------- *args ---------------------------------
+
+# def simple(first_name, *args):
+#     print(f"Hello, {first_name}")
+#     for others in args:
+#         print(f"Bye, bye {others}")
+
+# simple("Bob", "Moby", "Foggy")
+
+# def filter_even(*args):
+#     even_nums = []
+#     for num in args:
+#         if num % 2 == 0:
+#             even_nums.append(num)
+#     return even_nums
+
+# print(filter_even(1, 2, 3, 4, 5, 6))
+
+# def find_max(*args):
+#     for arg in args:
+#         return max(args)
+    
+
+# print(find_max(10, 22, 5, 17))  
+
+# import statistics
+
+# def average(*args):
+#     return mean(args)
+
+# print(average(4, 8, 6))  
+
+from statistics import mean
+
+def sum_average(*args):
+    return sum(args), mean(args), min(args)
+
+print(sum_average(5, 10, 15))  
+
+
+
 #--------------------------- Lambda ---------------------------------
 
 #--------------------------- Map ---------------------------------
@@ -1154,7 +1199,7 @@ import sys
     
 #     def __next__(self)
 
-
+#---------------------------- Imports ---------------------------------
 
 # import os
 
@@ -1204,19 +1249,3 @@ import sys
 # for char in UpIterator("HeLlo PythOn"):
 #     print(char)
 
-class LettersIterator:
-    def __init__(self):
-        start = 97
-        stop = 100
-        current = start +=1
-
-    def __iter__(self):
-        return self
-    
-    def __next__(self):
-        if current < stop:
-            return current
-            raise StopIteration
-        
-chars = LettersIterator()
-print(chars)
