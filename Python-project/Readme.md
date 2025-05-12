@@ -12,7 +12,7 @@
 ##Структура на проекта
 
 ```sh
-|── README.md
+├── README.md
 ├── main.py                   # Главно меню и логика на приложението
 ├── transaction.py            # Клас Transaction
 ├── transaction_manager.py    # Клас TransactionManager
