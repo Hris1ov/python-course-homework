@@ -824,6 +824,52 @@ import sys
 # outer()
 # print(f"x = {x} in global")
 
+
+
+#--------------------------- Anotations ---------------------------
+
+# def return_return()->float:
+#     print("Hello World!")
+#     return float(5)
+
+
+# def return_print():
+#     print("Hello Wolrd!")
+
+# print(return_return())
+# print(return_print())
+
+# Типови анотации тук
+# def add_numbers(a, b) -> int:
+#     return a + b
+
+# print(add_numbers(4, 6))
+
+# Типови анотации тук
+# def get_first_name(names) -> str:
+#     return names[-1]
+
+# print(get_first_name(['Alice', 'Caprice', 'Salendoval']))
+
+# def is_even(n) -> bool:
+#     return n % 2 == 0
+
+# print(type(is_even(6))) 
+
+
+# def get_user_info(user_id, password, sex, age) -> dict:
+#     return {"id": user_id, "password": password, "sex": sex, "age": age}
+
+# def user_dict(user_info):
+#     result = ""
+#     for k, v in user_info.items():
+#         result += f"{k}: {v};\n"
+#     return result
+
+# data = get_user_info("i75", 1234, "male", 12)
+# print(user_dict(data))
+
+
 #--------------------------- *args ---------------------------------
 
 # def simple(first_name, *args):
@@ -856,18 +902,114 @@ import sys
 
 # print(average(4, 8, 6))  
 
-from statistics import mean
+# from statistics import mean
 
-def sum_average(*args):
-    return sum(args), mean(args), min(args)
+# def sum_average(*args):
+#     return sum(args), mean(args), min(args)
 
-print(sum_average(5, 10, 15))  
+# print(sum_average(5, 10, 15))  
 
+# def multiply_all(*args):
+#     result = 1
+#     for arg in args:
+#         result *= arg
+#     return result
 
+# print(multiply_all(1,2,3))
+
+# def filter_greater_than(limit, *args):
+#     return [x for x in args if x > limit]
+
+# print(filter_greater_than(5,2,4,5,7,8))
+
+# def sum_positive(*args):
+#     for arg in args:
+#         if arg > 0:
+#             print(arg)
+    
+# sum_positive(-1,-5,3,-2,6,-9,)
+    
 
 #--------------------------- Lambda ---------------------------------
 
+# adding = lambda x , y: x * y
+
+# print(adding(4,2))
+
+# quatro = lambda x : x * x
+
+# print(quatro(4))
+
+# module = lambda x : x % 2
+
+# print(module(16))
+
+# students = [
+#     {"name": "Ivan", "grade": 5},
+#     {"name": "Maria", "grade": 6},
+#     {"name": "Georgi", "grade": 4},
+#     {"name": "Anna", "grade": 6}
+# ]
+
+# # names = list(map(lambda n : n["name"], students))
+# grades = list(filter(lambda x : x["grade"] == 6, students))
+# excellent = list(map(lambda x : x["name"], grades))
+
+
+
+# # print(names)
+# # print(grades)
+# print(excellent)
+
 #--------------------------- Map ---------------------------------
+
+# numbers = [1,2,3,4,5]
+# quadro = lambda nums : list(map(lambda x : x * 2, nums))
+
+# print(quadro(numbers))
+
+# numbers = [1, 2, 3, 4]
+# treto = lambda nums : list(map(lambda x : x * 3, nums))
+
+# print(treto(numbers))
+
+# strings = ["10", "20", "30"]
+# numbers = lambda nums : list(map(lambda s : int(s), nums))
+
+# print(numbers(strings))
+
+# celsius = [0, 10, 20, 30, 40]
+
+# fahrenheit = list(map(lambda c: c * 9/5 + 32, celsius))
+
+# print(fahrenheit)
+
+# words = ["hello", "world", "python", "lambda"]
+# up = list(map(lambda element : element.upper(), words))
+
+# print(up)
+
+# sentences = ["hello world", "python is fun", "lambda is powerful"]
+# new_sentence = list(map(lambda word : word.title(), sentences))
+
+# print(new_sentence)
+
+# numbers = [1, 2, 3, 4, 5]
+# double = list(map(lambda num : num * num, numbers))
+
+# print(double)
+
+# letters = ['a', 'b', 'c', 'e', 'i', 'o', 'u', 'x']
+
+# vowels = list(filter(lambda i : i in 'aeiou', letters))
+
+# print.capitalize(vowels)
+
+# letters = ['a', 'b', 'c', 'e', 'i', 'o', 'u', 'x']
+
+# filtered_upper = list(map(lambda w : w.upper(), filter(lambda w : w in 'aeiou', letters)))
+                            
+# print(filtered_upper)
 
 #--------------------------- OOP ---------------------------------
 
@@ -1198,6 +1340,11 @@ print(sum_average(5, 10, 15))
 #         return self
     
 #     def __next__(self)
+
+    
+
+
+
 
 #---------------------------- Imports ---------------------------------
 
